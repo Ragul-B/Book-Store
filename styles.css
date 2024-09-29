@@ -142,7 +142,7 @@ header {
 /* =============================================== */
 
 .hero {
-  background: url('back.jpg') center/cover no-repeat;
+  background: url('back.jpg') center center/cover no-repeat;
   height: 80vh;
   display: flex;
   justify-content: center;
