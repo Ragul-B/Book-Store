@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven - Your Favorite Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Testimonials Section */
+.testimonials {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.testimonial-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial-card cite {
+    display: block;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.footer-content {
+    margin: 0 auto;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links li a {
+    color: #ffd700; /* Gold */
+    text-decoration: none;
+}
+
+.social-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-card {
+        width: 90%; /* Responsive width */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Haven</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Book Haven</h1>
+            <p>Find your next great read here.</p>
+            <a href="books.html" class="btn-primary">Browse Books</a>
+        </div>
+    </div>
+
+    <!-- Featured Books Section -->
+    <section class="featured-books">
+        <h2>Featured Books</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="book1.jpg" alt="Fiction Book 1">
+                <h3>Fiction Book 1</h3>
+                <p>A thrilling adventure awaits.</p>
+                <a href="books.html#book1" class="btn-order">Order Now</a>
+            </div>
+            <div class="book-card">
+                <img src="book2.jpg" alt="Non-Fiction Book 1">
+                <h3>Non-Fiction Book 1</h3>
+                <p>Discover the facts behind the stories.</p>
+                <a href="books.html#book2" class="btn-order">Order Now</a>
+            </div>
+            <div class="book-card">
+                <img src="book3.jpg" alt="Kids Book 1">
+                <h3>Kids Book 1</h3>
+                <p>Fun stories for young readers.</p>
+                <a href="books.html#book3" class="btn-order">Order Now</a>
+            </div>
+            <div class="book-card">
+                <img src="book4.jpg" alt="Mystery Book 1">
+                <h3>Mystery Book 1</h3>
+                <p>Can you solve the mystery?</p>
+                <a href="books.html#book4" class="btn-order">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Readers Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"I love Book Haven! They always have the latest releases."</p>
+                <cite>- Sarah L.</cite>
+            </div>
+            <div class="testimonial-card">
+                <p>"Great selection and fantastic service!"</p>
+                <cite>- Mark T.</cite>
+            </div>
+            <div class="testimonial-card">
+                <p>"A cozy place to find my next favorite book."</p>
+                <cite>- Linda W.</cite>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Book Haven | All rights reserved</p>
+            <p>Follow us on social media:</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+    
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@bookhaven.com">info@bookhaven.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+
+    </footer>
+    
+
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

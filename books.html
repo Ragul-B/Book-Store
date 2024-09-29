@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Book Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.footer-content {
+    margin: 0 auto;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links li a {
+    color: #ffd700; /* Gold */
+    text-decoration: none;
+}
+
+.social-links li a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Haven</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+        </nav>
+    </header>
+
+    <section class="book-section">
+        <h1>Our Collection</h1>
+        <div class="book-grid">
+            <div class="book-card" data-title="Book 1" data-description="This is an amazing fiction book.">
+                <img src="book1.jpg" alt="Book 1">
+                <h3>Book 1</h3>
+                <p>Author 1</p>
+                <button class="btn-info">Read More</button>
+            </div>
+            <div class="book-card" data-title="Book 2" data-description="A thrilling mystery novel.">
+                <img src="book2.jpg" alt="Book 2">
+                <h3>Book 2</h3>
+                <p>Author 2</p>
+                <button class="btn-info">Read More</button>
+            </div>
+            <div class="book-card" data-title="Book 3" data-description="An inspiring self-help book.">
+                <img src="book3.jpg" alt="Book 3">
+                <h3>Book 3</h3>
+                <p>Author 3</p>
+                <button class="btn-info">Read More</button>
+            </div>
+            <!-- Add more books as needed -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Book Haven | All rights reserved</p>
+            <p>Follow us on social media:</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+    
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@bookhaven.com">info@bookhaven.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTop" style="position: fixed; bottom: 20px; right: 20px; background-color: #007bff; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; display: none;">
+            ↑
+        </button>
+    </footer>
+    
+    <script>
+        // Show or hide the button depending on scroll position
+        window.onscroll = function() {
+            const button = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+    
+        // Scroll to the top when the button is clicked
+        document.getElementById('scrollToTop').onclick = function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        };
+    </script>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" id="close-popup">&times;</span>
+            <h2 id="popup-title">Book Title</h2>
+            <p id="popup-description">Book Description</p>
+            <button id="order-now" class="btn-order">Order Now</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
