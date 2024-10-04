@@ -29,7 +29,7 @@ header {
   background-color: #000432;
   color: white;
   padding: 20px 0;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 999;
   display: flex;
