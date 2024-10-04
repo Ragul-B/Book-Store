@@ -5,42 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Book Haven</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Footer Styles */
-.footer {
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-}
+        .footer {
+            background-color: #000432;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
 
-.footer-content {
-    margin: 0 auto;
-}
+        .footer-content {
+            margin: 0 auto;
+        }
 
-.social-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
 
-.social-links li a {
-    color: #ffd700; /* Gold */
-    text-decoration: none;
-}
+        .social-links li a {
+            color: #ffd700; /* Gold */
+            text-decoration: none;
+        }
 
-.social-links li a:hover {
-    text-decoration: underline;
-}
+        .social-links li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            background-color: #f4b400; /* Red background */
+            color: #000432; /* White text */
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            font-size: 24px; /* Size of the arrow */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+            animation: fadeOut 0.5s forwards; /* Initial fade-out animation */
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #c0392b; /* Darker red on hover */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+        /* Fade-in and fade-out animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Slide in from below */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0); /* Start from its position */
+            }
+            to {
+                opacity: 0;
+                transform: translateY(20px); /* Slide out to below */
+            }
+        }
+
+        /* Our Story Section Styles */
+        .story-section {
+            background-color: #e7f0ff; /* Light blue background */
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .story-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .story-section p {
+            font-size: 16px;
+            color: #333; /* Darker gray text */
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Book Recommendations Section Styles */
+        .recommendations-section {
+            background-color: #fff3e0; /* Light orange background */
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .recommendations-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .book-recommendation {
+            margin: 15px auto;
+            padding: 15px;
+            background-color: #fff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .book-recommendation h4 {
+            margin: 10px 0;
+            color: #555; /* Medium gray text */
+        }
+
+        .book-recommendation p {
+            font-size: 14px;
+            color: #666; /* Dark gray text */
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Book Haven</h1>
+            <a href="index.html"><h1>Book Haven</h1></a>
         </div>
         <nav>
             <ul class="nav-links">
@@ -56,40 +156,63 @@
     <section class="about-section">
         <h1>About Us</h1>
         <p>We are a passionate bookstore that connects readers with their favorite books.</p>
+        <p>At Book Haven, we believe in the power of stories to inspire, educate, and transform lives. Our curated collection features a diverse range of genres, from timeless classics to the latest bestsellers, ensuring there's something for every reader.</p>
+        <p>Our mission is to create a community of book lovers who can share their thoughts, experiences, and recommendations. We host events, author signings, and book clubs to foster this community spirit.</p>
+        <p>Join us in our journey to explore the world through books!</p>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <h2>Our Story</h2>
+        <p>Founded in 2020, Book Haven started as a small corner bookstore in our community. With a deep love for literature, we aimed to create a welcoming space for readers of all ages.</p>
+        <p>Our founder, Sarah Johnson, envisioned a bookstore that not only sells books but also fosters a love for reading and community engagement. Over the years, we have expanded our collection and now feature over 10,000 titles across various genres.</p>
+        <p>Today, Book Haven stands as a beloved local hub for readers, writers, and everyone in between, celebrating the magic of books and the connections they create.</p>
+    </section>
+
+    <!-- Book Recommendations Section -->
+    <section class="recommendations-section">
+        <h2>Book Recommendations</h2>
+        <div class="book-recommendation">
+            <h4>The Midnight Library by Matt Haig</h4>
+            <p>A captivating exploration of choices and possibilities, this novel invites readers to consider the lives they could have led.</p>
+        </div>
+        <div class="book-recommendation">
+            <h4>The Vanishing Half by Brit Bennett</h4>
+            <p>A powerful tale of twin sisters who choose to live in two very different worlds, showcasing themes of identity and race.</p>
+        </div>
+        <div class="book-recommendation">
+            <h4>Where the Crawdads Sing by Delia Owens</h4>
+            <p>A beautifully written coming-of-age story that intertwines nature, love, and mystery in the marshes of North Carolina.</p>
+        </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Book Haven | All rights reserved</p>
-            <p>Follow us on social media:</p>
+            <p>&copy; 2024 Book Haven. All rights reserved.</p>
             <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             </ul>
-    
-            <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:info@bookhaven.com">info@bookhaven.com</a></p>
-                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-            </div>
-        <!-- Scroll to Top Button -->
-
+        </div>
     </footer>
- 
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+    <script>
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <div class="close-btn" id="close-btn">&times;</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="books.html">Books</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-
-    <script src="scripts.js"></script>
+        // Show button only when scrolled down
+        window.onscroll = function() {
+            const button = document.getElementById('scrollToTopBtn');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = 'block';
+                button.style.animation = 'fadeIn 0.5s forwards'; // Fade-in animation
+            } else {
+                button.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
