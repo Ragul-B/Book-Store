@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Haven - Your Favorite Bookstore</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* Testimonials Section */
 .testimonials {
@@ -14,7 +16,7 @@
 }
 
 .testimonials h2 {
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 30px;
 }
 
@@ -47,7 +49,7 @@
 
 /* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #000432;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -76,6 +78,101 @@
     text-decoration: underline;
 }
 
+/* Slideshow */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  height: 400px;
+  
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.slide {
+  transform: translateX(-100%) scale(0.9); /* Off-screen to the left and slightly scaled down */
+  opacity: 0; /* Fully transparent */
+  background-color: #3498db; /* Initial color (blue) */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Initial soft shadow */
+  animation: slideInBounce 2s ease-out forwards; /* Smooth, professional animation */
+}
+
+@keyframes slideInBounce {
+  0% {
+    transform: translateX(-100%) scale(0.9); /* Start off-screen and scaled down */
+    opacity: 0; /* Fully transparent */
+    background-color: #3498db; /* Initial color */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  }
+  50% {
+    transform: translateX(10%) scale(1.05); /* Overshoot slightly with scaling */
+    opacity: 0.6; /* Semi-transparent */
+    background-color: #2ecc71; /* Transition color (green) */
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  }
+  70% {
+    transform: translateX(-5%) scale(0.95); /* Small bounce back with scaling */
+    opacity: 0.8; /* More visible */
+    background-color: #e74c3c; /* Color changes to red */
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+  }
+  100% {
+    transform: translateX(0) scale(1); /* Final position and scale */
+    opacity: 1; /* Fully opaque */
+    background-color: #3498db; /* Final color (blue) */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Final soft shadow */
+  }
+}
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.slide {
+    display: none; /* Hide all slides initially */
+    position: relative;
+}
+
+.slide-description {
+    position: absolute;
+    bottom: 150px;
+    left: 10px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeIn 5s; /* Fade-in animation for text */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.slide-description.slide-in {
+    animation: slideIn 1s ease-in-out forwards; /* Apply slide-in animation */
+}
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .book-grid {
@@ -90,14 +187,84 @@
     .testimonial-card {
         width: 90%; /* Responsive width */
     }
+
+    .slide-description{
+        font-size: 14px;
+    }
 }
+
+.featured {
+    font-size: 30px; /* Set the font size for the heading */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center align the text */
+    color: #222; /* Dark blue color for the text */
+    margin: 20px 0; /* Add vertical margin */
+    position: relative; /* Positioning for the underline effect */
+}
+
+.featured::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #f4b400;
+  margin-bottom: 10px;
+}
+    /* Scroll to Top Button */
+    #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        background-color: #f4b400; /* Red background */
+        color: #000432; /* White text */
+        border: none;
+        border-radius: 50%;
+        padding: 10px 15px;
+        font-size: 24px; /* Size of the arrow */
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
+        animation: fadeOut 0.5s forwards; /* Initial fade-out animation */
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #c0392b; /* Darker red on hover */
+        transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+    /* Fade-in and fade-out animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px); /* Slide in from below */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0); /* Start from its position */
+        }
+        to {
+            opacity: 0;
+            transform: translateY(20px); /* Slide out to below */
+        }
+    }
+
 
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Book Haven</h1>
+            <a href="index.html"><h1 style="text-align: center;">Book Haven</h1></a>
         </div>
         <nav>
             <ul class="nav-links">
@@ -110,17 +277,34 @@
         </nav>
     </header>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Book Haven</h1>
-            <p>Find your next great read here.</p>
-            <a href="books.html" class="btn-primary">Browse Books</a>
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="book1.webp" alt="Chemistry Simplified">
+            <div class="slide-description">
+                <h2>Chemistry Simplified</h2>
+                <p>Master chemistry concepts with our comprehensive guide tailored for NEET and JEE preparation.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/biology.jpg" alt="Biology Boosters">
+            <div class="slide-description">
+                <h2>Biology Boosters</h2>
+                <p>Dive deep into biology with our expertly curated materials designed for CBSE students.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/physics.jpg" alt="Physics Fundamentals">
+            <div class="slide-description">
+                <h2>Physics Fundamentals</h2>
+                <p>Unlock the mysteries of physics with our latest editions focusing on competitive exam success.</p>
+            </div>
         </div>
     </div>
+    
 
     <!-- Featured Books Section -->
     <section class="featured-books">
-        <h2>Featured Books</h2>
+        <h2 class="featured">Featured Books</h2>
         <div class="book-grid">
             <div class="book-card">
                 <img src="book1.jpg" alt="Fiction Book 1">
@@ -151,7 +335,7 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials">
-        <h2>What Our Readers Say</h2>
+        <h2 class="featured">What Our Readers Say</h2>
         <div class="testimonial-cards">
             <div class="testimonial-card">
                 <p>"I love Book Haven! They always have the latest releases."</p>
@@ -167,23 +351,27 @@
             </div>
         </div>
     </section>
+
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-content" style="text-align: center;">
             <p>&copy; 2024 Book Haven | All rights reserved</p>
             <p>Follow us on social media:</p>
-            <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+            <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; font-size: 25px;">
+                <li><a href="#" style=" color: #f4b400;"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" style="text-decoration: none; color: #f4b400;"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" style="text-decoration: none; color: #f4b400;"><i class="fab fa-instagram"></i></a></li>
             </ul>
-    
-            <div class="contact-info">
+        
+            <div class="contact-info" style="margin-top: 20px;">
                 <h3>Contact Us</h3>
                 <p>Email: <a href="mailto:info@bookhaven.com">info@bookhaven.com</a></p>
                 <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
             </div>
-
+        </div>
     </footer>
+    <button id="scrollToTopBtn" style="display: none;">&#8593;</button>
+
+    
     
 
     
@@ -199,5 +387,53 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script>
+        // Slideshow Script
+
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+    const descriptions = document.getElementsByClassName("slide-description");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; // Hide all slides
+        descriptions[i].classList.remove('slide-in'); // Reset animation
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 } // Reset slide index if it exceeds
+
+    slides[slideIndex - 1].style.display = "block"; // Show current slide
+
+    // Trigger animation for the current slide's description
+    descriptions[slideIndex - 1].classList.add('slide-in'); 
+
+    setTimeout(showSlides, 10000); // Change slide every 10 seconds
+}
+
+        // Get the button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Show or hide the button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block"; // Show button
+                scrollToTopBtn.style.animation = "fadeIn 0.5s forwards"; // Fade in animation
+            } else {
+                scrollToTopBtn.style.animation = "fadeOut 0.5s forwards"; // Fade out animation
+                setTimeout(() => {
+                    scrollToTopBtn.style.display = "none"; // Hide after animation completes
+                }, 500); // Match timeout with fade-out duration
+            }
+        };
+
+        // Scroll to top functionality
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+ </script>
 </body>
 </html>
