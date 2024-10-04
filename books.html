@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books - Book Haven</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Footer Styles */
+
+
+/* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #000432;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -36,12 +39,223 @@
 .social-links li a:hover {
     text-decoration: underline;
 }
+
+/* Category Dropdown and Search Bar Styles */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Stack elements on small screens */
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar Styles */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Rounded corners for the search bar */
+}
+
+/* Input Field Styles */
+.search-bar input[type="search"] {
+    width: 50%; /* Full width */
+    height: 40px; /* Increased height for better usability */
+    padding: 0 15px; /* Added padding for spacing */
+    font-size: 16px; /* Increased font size */
+    border: 2px solid #ddd; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    margin-bottom: 15px;
+    margin-left: 20%;
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+.search-bar input[type="search"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+}
+
+/* Dropdown Styles */
+.search-bar select {
+    width: 50%; /* Full width */
+    height: 40px; /* Increased height for better usability */
+    padding: 0 15px; /* Added padding for spacing */
+    font-size: 16px; /* Increased font size */
+    border: 2px solid #ddd; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    margin-left: 20%;
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+/* Hover and Focus Effects for Dropdown */
+.search-bar select:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+.search-bar select:focus {
+    border-color: #007bff; /* Change border color on focus */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .search-bar {
+        padding: 10px 5px; /* Adjust padding on smaller screens */
+    }
+
+    .search-bar input[type="search"],
+    .search-bar select {
+        width: 80%; /* Ensure full width on smaller screens */
+        height: 40px; /* Maintain height */
+        margin-left: 30px
+        ; /* Reset margin-left for centering */
+        margin-bottom: 10px; /* Maintain spacing between elements */
+    }
+}
+
+/* Book Grid Styles */
+.book-grid {
+    display: flex;
+    flex-wrap:wrap;
+    gap: 10px;
+    justify-content: space-around;
+    border: none;
+}
+
+/* Book Card Styles */
+.book-card {
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0%;
+    
+}
+
+
+
+.btn-order,
+.btn-info {
+    background-color: #000432;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-order:hover {
+    background-color: #050755;
+}
+
+.btn-info {
+    background-color: #000432;
+}
+
+.btn-info:hover {
+    background-color: #050755;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction:column/* Stack dropdown and input */
+    }
+
+    .book-card {
+        width: 45%; /* Adjust width for tablets */
+    }
+    .book-card img{
+        width: 100%;
+    }
+
+    .book-grid {
+        justify-content: center; /* Center items on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        width: 48%; /* Full width for mobile */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+    /* Scroll to Top Button */
+    #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        background-color: #f4b400; /* Red background */
+        color: #000432; /* White text */
+        border: none;
+        border-radius: 50%;
+        padding: 10px 15px;
+        font-size: 24px; /* Size of the arrow */
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
+        animation: fadeOut 0.5s forwards; /* Initial fade-out animation */
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #c0392b; /* Darker red on hover */
+        transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+    /* Fade-in and fade-out animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px); /* Slide in from below */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0); /* Start from its position */
+        }
+        to {
+            opacity: 0;
+            transform: translateY(20px); /* Slide out to below */
+        }
+    }
+
+
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Book Haven</h1>
+            <a href="index.html"><h1>Book Haven</h1></a>
         </div>
         <nav>
             <ul class="nav-links">
@@ -54,25 +268,44 @@
         </nav>
     </header>
 
+    <!-- Category Dropdown and Search Bar -->
+    <section class="search-bar">
+        <input type="search" placeholder="Search books..." id="search-input">
+        <select id="category-dropdown">
+            <option value="all">All Categories</option>
+            <option value="fiction">Fiction</option>
+            <option value="nonfiction">Non-fiction</option>
+            <option value="kids">Kids</option>
+            <option value="selfhelp">Self-help</option>
+        </select>
+    </section>
+
     <section class="book-section">
         <h1>Our Collection</h1>
-        <div class="book-grid">
-            <div class="book-card" data-title="Book 1" data-description="This is an amazing fiction book.">
-                <img src="book1.jpg" alt="Book 1">
+        <div class="book-grid" id="book-grid">
+            <div class="book-card" data-title="Book 1" data-category="fiction" data-description="This is an amazing fiction book.">
+                <img src="book1.webp" alt="Book 1">
                 <h3>Book 1</h3>
                 <p>Author 1</p>
                 <button class="btn-info">Read More</button>
             </div>
-            <div class="book-card" data-title="Book 2" data-description="A thrilling mystery novel.">
-                <img src="book2.jpg" alt="Book 2">
+            <div class="book-card" data-title="Book 2" data-category="fiction" data-description="A thrilling mystery novel.">
+                <img src="bookd.jpg" alt="Book 2">
                 <h3>Book 2</h3>
                 <p>Author 2</p>
                 <button class="btn-info">Read More</button>
             </div>
-            <div class="book-card" data-title="Book 3" data-description="An inspiring self-help book.">
-                <img src="book3.jpg" alt="Book 3">
+            <div class="book-card" data-title="Book 3" data-category="selfhelp" data-description="An inspiring self-help book." data-price="Rs.200">
+                <img src="book1.webp" alt="Book 3">
                 <h3>Book 3</h3>
                 <p>Author 3</p>
+                <button class="btn-info">Read More</button>
+            </div>
+
+            <div class="book-card" data-title="Book 4" data-category="selfhelp" data-description="An inspiring self-help book." data-price="Rs.200">
+                <img src="book1.webp" alt="Book 3">
+                <h3>Book 4</h3>
+                <p>Author 4</p>
                 <button class="btn-info">Read More</button>
             </div>
             <!-- Add more books as needed -->
@@ -80,40 +313,25 @@
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-content" style="text-align: center;">
             <p>&copy; 2024 Book Haven | All rights reserved</p>
             <p>Follow us on social media:</p>
-            <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+            <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; font-size: 25px;">
+                <li><a href="#" style=" color: #f4b400;"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" style="text-decoration: none; color: #f4b400;"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" style="text-decoration: none; color: #f4b400;"><i class="fab fa-instagram"></i></a></li>
             </ul>
-    
-            <div class="contact-info">
+        
+            <div class="contact-info" style="margin-top: 20px;">
                 <h3>Contact Us</h3>
                 <p>Email: <a href="mailto:info@bookhaven.com">info@bookhaven.com</a></p>
                 <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
             </div>
+        </div>
     </footer>
-    
-    <script>
-        // Show or hide the button depending on scroll position
-        window.onscroll = function() {
-            const button = document.getElementById('scrollToTop');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
-            }
-        };
-    
-        // Scroll to the top when the button is clicked
-        document.getElementById('scrollToTop').onclick = function() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-        };
-    </script>
 
+    <button id="scrollToTopBtn" style="display: none;">&#8593;</button>
+    
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="close-btn" id="close-btn">&times;</div>
@@ -136,5 +354,63 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script>
+        // Category filtering
+        const categoryDropdown = document.getElementById('category-dropdown');
+        const bookGrid = document.getElementById('book-grid');
+
+        categoryDropdown.addEventListener('change', function() {
+            const selectedCategory = this.value;
+            const books = bookGrid.getElementsByClassName('book-card');
+            
+            for (let i = 0; i < books.length; i++) {
+                const bookCategory = books[i].getAttribute('data-category');
+                if (selectedCategory === 'all' || bookCategory === selectedCategory) {
+                    books[i].style.display = 'block';
+                } else {
+                    books[i].style.display = 'none';
+                }
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+
+        searchInput.addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase();
+            const books = bookGrid.getElementsByClassName('book-card');
+            
+            for (let i = 0; i < books.length; i++) {
+                const bookTitle = books[i].getAttribute('data-title').toLowerCase();
+                if (bookTitle.includes(searchQuery)) {
+                    books[i].style.display = 'block';
+                } else {
+                    books[i].style.display = 'none';
+                }
+            }
+        });
+
+         // Get the button
+         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Show or hide the button based on scroll position
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block"; // Show button
+        scrollToTopBtn.style.animation = "fadeIn 0.5s forwards"; // Fade in animation
+    } else {
+        scrollToTopBtn.style.animation = "fadeOut 0.5s forwards"; // Fade out animation
+        setTimeout(() => {
+            scrollToTopBtn.style.display = "none"; // Hide after animation completes
+        }, 500); // Match timeout with fade-out duration
+    }
+};
+
+// Scroll to top functionality
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+    </script>
 </body>
 </html>
