@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Book Haven</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Footer Styles */
         .footer {
-            background-color: #333;
+            background-color: #000432;
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -65,7 +66,7 @@
         }
 
         .contact-form button {
-            background-color: #ffd700;
+            background-color: #000432;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -75,7 +76,7 @@
         }
 
         .contact-form button:hover {
-            background-color: #0056b3; /* Darker blue */
+            background-color: #050755; /* Darker blue */
         }
 
         .map-container {
@@ -103,12 +104,57 @@
                 height: 300px; /* Reduce map height on smaller screens */
             }
         }
+
+            /* Scroll to Top Button */
+    #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        background-color: #f4b400; /* Red background */
+        color: #000432; /* White text */
+        border: none;
+        border-radius: 50%;
+        padding: 10px 15px;
+        font-size: 24px; /* Size of the arrow */
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
+        animation: fadeOut 0.5s forwards; /* Initial fade-out animation */
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #c0392b; /* Darker red on hover */
+        transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+    /* Fade-in and fade-out animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px); /* Slide in from below */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0); /* Start from its position */
+        }
+        to {
+            opacity: 0;
+            transform: translateY(20px); /* Slide out to below */
+        }
+    }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Book Haven</h1>
+            <a href="index.html"><h1>Book Haven</h1></a>
         </div>
         <nav>
             <ul class="nav-links">
@@ -127,6 +173,7 @@
             <form action="" class="contact-form">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
+                <input type="number" placeholder="Your mobile no.." required>
                 <textarea placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
@@ -139,40 +186,25 @@
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-content" style="text-align: center;">
             <p>&copy; 2024 Book Haven | All rights reserved</p>
             <p>Follow us on social media:</p>
-            <ul class="social-links">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
+            <ul class="social-links" style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; font-size: 25px;">
+                <li><a href="#" style=" color: #f4b400;"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" style="text-decoration: none; color: #f4b400;"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" style="text-decoration: none; color: #f4b400;"><i class="fab fa-instagram"></i></a></li>
             </ul>
-            <div class="contact-info">
+        
+            <div class="contact-info" style="margin-top: 20px;">
                 <h3>Contact Us</h3>
                 <p>Email: <a href="mailto:info@bookhaven.com">info@bookhaven.com</a></p>
                 <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
             </div>
         </div>
-    
     </footer>
+    <button id="scrollToTopBtn" style="display: none;">&#8593;</button>
 
-    <script>
-        // Show or hide the button depending on scroll position
-        window.onscroll = function() {
-            const button = document.getElementById('scrollToTop');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = "block";
-            } else {
-                button.style.display = "none";
-            }
-        };
 
-        // Scroll to the top when the button is clicked
-        document.getElementById('scrollToTop').onclick = function() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-        };
-    </script>
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -186,5 +218,28 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script>
+         // Get the button
+         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Show or hide the button based on scroll position
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block"; // Show button
+        scrollToTopBtn.style.animation = "fadeIn 0.5s forwards"; // Fade in animation
+    } else {
+        scrollToTopBtn.style.animation = "fadeOut 0.5s forwards"; // Fade out animation
+        setTimeout(() => {
+            scrollToTopBtn.style.display = "none"; // Hide after animation completes
+        }, 500); // Match timeout with fade-out duration
+    }
+};
+
+// Scroll to top functionality
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+    </script>
 </body>
 </html>
